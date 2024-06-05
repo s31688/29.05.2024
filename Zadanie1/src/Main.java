@@ -26,7 +26,7 @@ public class Main {
         cars.add(car9);
         cars.add(car10);
 
-        boolean sorted;
+        /*boolean sorted;
         do {
             sorted = true;
             int index = 0;
@@ -41,7 +41,9 @@ public class Main {
                 }
                 index++;
             }
-        } while (!sorted);
+        } while (!sorted);*/
+
+        cars.sort(null);
 
         for(Car car : cars) {
             System.out.println(car.getProductionYear());
