@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,6 +27,10 @@ public class Main {
             itemsMap.put(item.getID(), item.getName());
         }
 
-        System.out.println("Items map: " + itemsMap.entrySet());
+        for(Map.Entry<String, String> item: itemsMap.entrySet()) {
+            System.out.println(item.getKey() + ": " + item.getValue());
+        }
+
+        //System.out.println("Items map: " + itemsMap.entrySet());
     }
 }
