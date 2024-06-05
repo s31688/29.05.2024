@@ -2,13 +2,14 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
-    public static int readNumber() throws NegativeNumberException {
+    public static int readNumber() {
+        NegativeNumberException ex = new NegativeNumberException("Negative numbers are not allowed", 0);
         try {
             Scanner sc = new Scanner(System.in);
             System.out.println("Give number: ");
             int num = sc.nextInt();
-            if (num < 0) {
-                throw new NegativeNumberException("Negative numbers are not allowed", 0);
+            if (num < ex.getLimit()) {
+                throw ex;
             }
             return num;
         } catch (NegativeNumberException e) {
@@ -17,7 +18,7 @@ public class Main {
         }
     }
 
-    public static int[] fillArray() throws NegativeNumberException {
+    public static int[] fillArray() {
         int[] tab = new int[10];
         int num;
         for(int i = 0; i < tab.length; i++) {
@@ -27,7 +28,7 @@ public class Main {
         return tab;
     }
 
-    public static void main(String[] args) throws NegativeNumberException {
+    public static void main(String[] args) {
         System.out.println(Arrays.toString(fillArray()));
     }
 }

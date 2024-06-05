@@ -5,4 +5,8 @@ public class NegativeNumberException extends Exception {
         super(errorMessage);
         this.limit = limit;
     }
+
+    public int getLimit() {
+        return limit;
+    }
 }
